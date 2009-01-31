@@ -1,0 +1,54 @@
+NAME
+    String::Urandom
+
+SYNOPSIS
+      use String::Urandom;
+
+      my $obj = new String::Urandom;
+
+      # set the string length 
+      $obj->str_length(255);
+
+      # set the characters
+      $obj->str_chars('a b c 1 2 3');
+
+      # print the result
+      print $obj->rand_string, "\n";
+
+DESCRIPTION
+    Using output from /dev/urandom. Simply convert bytes into 8-bit
+    characters.
+
+METHODS
+  str_length
+    This function will set/get the string character length.
+
+    The default value is: 32
+
+      $obj->str_length(255);
+
+  str_chars
+    This function will set/get characters used when generating a string.
+
+    The default value is: a-z A-Z 0-9
+
+      $obj->str_chars('a e i o u 1 2 3');
+
+  rand_string
+    This function will generate a random string.
+
+      $obj->rand_string;
+
+REQUIREMENTS
+    Any flavour of UNIX that supports /dev/urandom
+
+SEE ALSO
+    urandom(4)
+
+AUTHOR
+    Marc S. Brooks <mbrooks@cpan.org> <http://mbrooks.info>
+
+LICENSE
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
