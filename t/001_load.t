@@ -6,8 +6,8 @@ use Test::More tests => 2;
 
 BEGIN { use_ok('String::Urandom') }
 
-my $object = new String::Urandom;
+my $obj = new String::Urandom;
 
-isa_ok ( $object, 'String::Urandom' );
+isa_ok ( $obj, 'String::Urandom' );
 
 

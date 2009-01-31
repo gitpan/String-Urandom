@@ -3,4 +3,7 @@ Revision history for Perl module String::Urandom
 0.01 Mon Jan 26 21:41:19 2009
     - original version; created by ExtUtils::ModuleMaker 0.51
 
+0.02 Sat Jan 29 11:57:04 2009
+    - added the missing META.yml
+
 

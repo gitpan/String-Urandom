@@ -1,6 +1,6 @@
 # -*- perl -*-
 
-# t/002_urandom.t - check for the device /dev/urandom
+# t/002_check.t - check for the device /dev/urandom
 
 use Test::More tests => 1;
 
