@@ -18,7 +18,7 @@ package String::Urandom;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 #----------------------------------------------------------------------------+
 # General object constructor
@@ -84,7 +84,7 @@ __END__
 
 =head1 NAME
 
-String::Urandom
+String::Urandom - Generate a truely random string
 
 =head1 SYNOPSIS 
 

@@ -6,4 +6,6 @@ Revision history for Perl module String::Urandom
 0.02 Sat Jan 29 11:57:04 2009
     - added the missing META.yml
 
+0.03 Sat Jan 29 17:08:23 2009
+    - added a minor description to the module NAME
 
