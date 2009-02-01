@@ -2,7 +2,7 @@ MANIFEST
 README
 Changes
 Makefile.PL
+example.pl
 lib/String/Urandom.pm
 t/001_load.t
 t/002_check.t
-script/example.pl

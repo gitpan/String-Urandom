@@ -21,21 +21,21 @@ DESCRIPTION
 
 METHODS
   str_length
-    This function will set/get the string character length.
+    This method will set/get the string character length.
 
     The default value is: 32
 
       $obj->str_length(255);
 
   str_chars
-    This function will set/get characters used when generating a string.
+    This method will set/get characters used when generating a string.
 
     The default value is: a-z A-Z 0-9
 
       $obj->str_chars('a e i o u 1 2 3');
 
   rand_string
-    This function will generate a random string.
+    This method generates a new random string.
 
       $obj->rand_string;
 

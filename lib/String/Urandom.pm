@@ -1,6 +1,6 @@
 #----------------------------------------------------------------------------+
 #
-#  String::Urandom
+#  String::Urandom - Generate a truely random string
 #
 #  DESCRIPTION
 #  Using output of /dev/urandom.  Simply convert bytes into 8-bit characters.
@@ -18,7 +18,7 @@ package String::Urandom;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 #----------------------------------------------------------------------------+
 # General object constructor
@@ -109,7 +109,7 @@ Using output from /dev/urandom.  Simply convert bytes into 8-bit characters.
 
 =head2 str_length
 
-This function will set/get the string character length.
+This method will set/get the string character length.
 
 The default value is: 32
 
@@ -117,7 +117,7 @@ The default value is: 32
 
 =head2 str_chars
 
-This function will set/get characters used when generating a string.
+This method will set/get characters used when generating a string.
 
 The default value is: a-z A-Z 0-9
 
@@ -125,7 +125,7 @@ The default value is: a-z A-Z 0-9
 
 =head2 rand_string
 
-This function will generate a new random string.
+This method generates a new random string.
 
   $obj->rand_string;
 
