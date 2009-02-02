@@ -18,7 +18,7 @@ package String::Urandom;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 #----------------------------------------------------------------------------+
 # General object constructor
@@ -41,7 +41,7 @@ sub new {
 sub str_length {
     my ( $self, $value ) = @_;
     return $self->{LENGTH} unless ($value);
-    return $self->{LENGTH} unless ($value =~ /[\d]/);
+    return $self->{LENGTH} unless ($value =~ /^[\d]*$/);
     $self->{LENGTH} = $value;
     return $self->{LENGTH};
 }
@@ -52,7 +52,7 @@ sub str_length {
 sub str_chars {
     my ( $self, $value ) = @_;
     return $self->{CHARS} unless ($value);
-    return $self->{CHARS} unless ($value =~ /[\w]/);
+    return $self->{CHARS} unless ($value =~ /^[\w\s]*$/);
     my @chars = split(/\s+/, $value);
     $self->{CHARS} = \@chars;
     return $self->{CHARS};
