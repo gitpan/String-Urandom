@@ -18,7 +18,7 @@ package String::Urandom;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 #----------------------------------------------------------------------------+
 # General object constructor
@@ -64,16 +64,13 @@ sub str_chars {
 sub rand_string {
     my $self = shift;
 
-    my $length = $self->{LENGTH};
-    my $chars  = $self->{CHARS};
-
     open (DEV, "/dev/urandom") or die "Cannot open file: $!";
-    read (DEV, my $bytes, $length);
+    read (DEV, my $bytes, $self->{LENGTH});
 
     my $string;
     my @randoms = split(//, $bytes);
     foreach (@randoms) {
-        $string .= @$chars[ ord($_) % @$chars ];
+        $string .= @{ $self->{CHARS} }[ ord($_) % @{ $self->{CHARS} } ];
     }
     return $string;
 }

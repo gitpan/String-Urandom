@@ -12,3 +12,6 @@ Revision history for Perl module String::Urandom
 0.04 Sat Jan 31 19:15:47 2009
     - minor pod changes; nothing special
 
+0.05 Sun Feb 1  18:12:11 2009
+    - simplified the rand_string() method
+
