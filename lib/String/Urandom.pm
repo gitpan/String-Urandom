@@ -1,6 +1,6 @@
 #----------------------------------------------------------------------------+
 #
-#  String::Urandom - Generate a truely random string
+#  String::Urandom - Generate a truly random string
 #
 #  DESCRIPTION
 #  Using output of /dev/urandom.  Simply convert bytes into 8-bit characters.
@@ -18,7 +18,7 @@ package String::Urandom;
 use strict;
 use warnings;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 #----------------------------------------------------------------------------+
 # General object constructor
@@ -81,7 +81,7 @@ __END__
 
 =head1 NAME
 
-String::Urandom - Generate a truely random string
+String::Urandom - Generate a truly random string
 
 =head1 SYNOPSIS 
 

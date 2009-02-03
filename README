@@ -1,5 +1,5 @@
 NAME
-    String::Urandom - Generate a truely random string
+    String::Urandom - Generate a truly random string
 
 SYNOPSIS
       use String::Urandom;

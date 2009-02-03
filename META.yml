@@ -1,7 +1,7 @@
 --- #YAML:1.0
  name: String::Urandom
  abstract: Using output of /dev/urandom.  Simply convert bytes into 8-bit characters.
- version: 0.06
+ version: 0.07
  author:
    - Marc S. Brooks <mbrooks@cpan.org>
  license: perl
