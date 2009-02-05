@@ -1,25 +1,5 @@
 Revision history for Perl module String::Urandom
 
-0.01 Mon Jan 26 21:41:19 2009
-    - original version; created by ExtUtils::ModuleMaker 0.51
-
-0.02 Sat Jan 31 11:57:04 2009
-    - added the missing META.yml
-
-0.03 Sat Jan 31 17:08:23 2009
-    - added the module description to =head1 NAME
-
-0.04 Sat Jan 31 19:15:47 2009
+0.09 Thu Feb  5 12:36:47 2009
     - minor pod changes; nothing special
 
-0.05 Sun Feb  1 18:12:11 2009
-    - simplified the rand_string() method
-
-0.06 Mon Feb  2 05:08:26 2009
-    - fixed regex handling of method arguments
-
-0.07 Mon Feb  2 18:34:13 2009
-    - fixed mispelled word in description NAME
-
-0.08 Thu Feb  5 11:03:59 2009
-    - minor pod changes; nothing special

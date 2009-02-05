@@ -46,9 +46,9 @@ NOTES
     The /dev/urandom is an ("unlocked" random source) which reuses the
     internal pool to produce more pseudo-random bits. Since this is the
     case, the read may contain less entropy than its counterpart
-    /dev/random. Knowing this, this module was intended to be used a
+    /dev/random. Knowing this, this module was intended to be used as a
     pseudorandom string generator for less secure applications where
-    response timing be of an issue.
+    response timing may an issue.
 
 SEE ALSO
     urandom(4)
