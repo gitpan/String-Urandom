@@ -1,5 +1,5 @@
 NAME
-    String::Urandom - Generate a truly random string
+    String::Urandom - An alternative to using /dev/random
 
 SYNOPSIS
       use String::Urandom;
@@ -41,6 +41,14 @@ METHODS
 
 REQUIREMENTS
     Any flavour of UNIX that supports /dev/urandom
+
+NOTES
+    The /dev/urandom is an ("unlocked" random source) which reuses the
+    internal pool to produce more pseudo-random bits. Since this is the
+    case, the read may contain less entropy than its counterpart
+    /dev/random. Knowing this, this module was intended to be used a
+    pseudorandom string generator for less secure applications where
+    response timing be of an issue.
 
 SEE ALSO
     urandom(4)

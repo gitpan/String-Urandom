@@ -1,6 +1,6 @@
 #----------------------------------------------------------------------------+
 #
-#  String::Urandom - Generate a truly random string
+#  String::Urandom - An alternative to /dev/random
 #
 #  DESCRIPTION
 #  Using output of /dev/urandom.  Simply convert bytes into 8-bit characters.
@@ -18,7 +18,7 @@ package String::Urandom;
 use strict;
 use warnings;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 #----------------------------------------------------------------------------+
 # General object constructor
@@ -81,7 +81,7 @@ __END__
 
 =head1 NAME
 
-String::Urandom - Generate a truly random string
+String::Urandom - An alternative to using /dev/random
 
 =head1 SYNOPSIS 
 
@@ -130,6 +130,10 @@ This method generates a new random string.
 
 Any flavour of UNIX that supports /dev/urandom
 
+=head1 NOTES
+
+The /dev/urandom is an ("unlocked" random source) which reuses the internal pool to produce more pseudo-random bits.  Since this is the case, the read may contain less entropy than its counterpart /dev/random.  Knowing this, this module was intended to be used a pseudorandom string generator for less secure applications where response timing be of an issue.
+
 =head1 SEE ALSO
 
 urandom(4)
@@ -140,5 +144,4 @@ Marc S. Brooks E<lt>mbrooks@cpan.orgE<gt> L<http://mbrooks.info>
 
 =head1 LICENSE
 
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.

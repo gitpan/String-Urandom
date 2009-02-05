@@ -21,3 +21,5 @@ Revision history for Perl module String::Urandom
 0.07 Mon Feb  2 18:34:13 2009
     - fixed mispelled word in description NAME
 
+0.08 Thu Feb  5 11:03:59 2009
+    - minor pod changes; nothing special
