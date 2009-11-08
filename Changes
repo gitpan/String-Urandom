@@ -1,5 +1,8 @@
 Revision history for Perl module String::Urandom
 
-0.09 Thu Feb  5 12:36:47 2009
-    - minor pod changes; nothing special
-
+0.10 Sun 08 02:09:01 2009
+    - Added Params::Validate validation calls to object methods.
+    - Modified the constructor to take configuration items as parameters.
+    - Minor POD updates.
+    - Added new method testing process for 'make test'.
+    - Minor changes in existing tests.

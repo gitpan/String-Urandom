@@ -1,11 +1,13 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
+use strict;
+use warnings;
 use String::Urandom;
 
-my $su = new String::Urandom;
-
-$su->str_length('255');
-$su->str_chars('a b c 1 2 3');
+my $su = String::Urandom->new(
+    LENGTH => 255,
+    CHARS  => [ qw( a b c 1 2 3 ) ]
+  );
 
 my $length = $su->str_length;
 my $chars  = $su->str_chars;
@@ -16,5 +18,3 @@ print <<RESULTS;
    Chars:  @$chars
    Result: $string
 RESULTS
-
-
