@@ -6,3 +6,6 @@ Revision history for Perl module String::Urandom
     - Minor POD updates.
     - Added new method testing process for 'make test'.
     - Minor changes in existing tests.
+
+0.11 Fri 25 16:07:28 2009
+    - Replaced Makefile.PL PREREQ_PM Test::Simple with Test::More

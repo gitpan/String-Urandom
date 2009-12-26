@@ -8,7 +8,7 @@ WriteMakefile(
     VERSION_FROM => 'lib/String/Urandom.pm', # finds \$VERSION
     AUTHOR       => 'Marc S. Brooks <mbrooks@cpan.org>',
     PREREQ_PM    => {
-        'Test::Simple'     => 0.44,
+        'Test::More'       => 0,
         'Params::Validate' => 0,
     },
 );
