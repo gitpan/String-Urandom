@@ -19,7 +19,7 @@ use strict;
 use warnings;
 use Params::Validate qw( :all );
 
-our $VERSION = 0.12;
+our $VERSION = 0.13;
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~[  OBJECT METHODS  ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
