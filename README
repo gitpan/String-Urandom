@@ -5,8 +5,8 @@ SYNOPSIS
       use String::Urandom;
 
       my $obj = String::Urandom->new(
-          LENGTH => 255,
-          CHARS  => [ qw( a b c 1 2 3 ) ]
+          LENGTH => 55,
+          CHARS  => [ qw/ a b c 1 2 3 / ]
         );
 
       print $obj->rand_string, "\n";
@@ -51,8 +51,8 @@ OBJECT METHODS
         or
 
       my %params = (
-          LENGTH => 255,
-          CHARS  => [ qw( a b c 1 2 3 ) ]
+          LENGTH => 55,
+          CHARS  => [ qw/ a b c 1 2 3 / ]
         );
 
       my $obj = String::Urandom->new(\%params);
@@ -62,14 +62,14 @@ OBJECT METHODS
 
     The default value is: 32
 
-      $obj->str_length(255);
+      $obj->str_length(55);
 
   str_chars
     This method will Set/Get characters used for generating a string.
 
     The default value is: a-z A-Z 0-9
 
-      $obj->str_chars('a e i o u 1 2 3');
+      $obj->str_chars('a b c 1 2 3');
 
   rand_string
     This method generates a new random string.
@@ -90,6 +90,10 @@ PARAMETERS
 REQUIREMENTS
     Any flavour of UNIX that supports /dev/urandom
 
+SECURITY
+    In general, the longer the string length and total characters defined,
+    the more secure the output result will be.
+
 NOTES
     The /dev/urandom is an ("unlocked" random source) which reuses the
     internal pool to produce more pseudo-random bits. Since this is the
@@ -108,7 +112,7 @@ COPYRIGHT
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
 
-    See <http://dev.perl.org/licenses/artistic.html>
+    See <http://www.perl.com/perl/misc/Artistic.html>
 
 DISCLAIMER OF WARRANTY
     BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY

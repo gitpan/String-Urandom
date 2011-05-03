@@ -5,8 +5,8 @@ use warnings;
 use String::Urandom;
 
 my $su = String::Urandom->new(
-    LENGTH => 255,
-    CHARS  => [ qw( a b c 1 2 3 ) ]
+    LENGTH => 55,
+    CHARS  => [ qw/ a b c 1 2 3 / ]
   );
 
 my $length = $su->str_length;

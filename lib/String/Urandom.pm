@@ -19,7 +19,7 @@ use strict;
 use warnings;
 use Params::Validate qw( :all );
 
-our $VERSION = 0.14;
+our $VERSION = 0.16;
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~[  OBJECT METHODS  ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
@@ -88,7 +88,9 @@ sub rand_string {
           { type => OBJECT }
           );
 
-    my @chars = shuffle_array( \@{ $self->{CHARS} } );
+    my @chars = @{ $self->{CHARS} };
+
+    shuffle_array(\@chars);
 
     open (DEV, "/dev/urandom") or die "Cannot open file: $!";
     read (DEV, my $bytes, $self->{LENGTH});
@@ -96,7 +98,7 @@ sub rand_string {
     my $string;
     my @randoms = split(//, $bytes);
     foreach (@randoms) {
-        $string .= @chars[ ord($_) % @chars ];
+        $string .= $chars[ ord($_) % @chars ];
     }
     return $string;
 }
@@ -109,15 +111,11 @@ sub rand_string {
 sub shuffle_array {
     my $array = shift;
 
-    for (my $i = @{$array}; --$i;) {
+    for (my $i = @$array; --$i;) {
         my $j = int rand ($i + 1);
-
         next if ($i == $j);
-
-        @{$array}[$i, $j] = @{$array}[$j, $i];
+        @$array[$i, $j] = @$array[$j, $i];
     }
-
-    return @$array;
 }
 
 1;
@@ -133,8 +131,8 @@ String::Urandom - An alternative to using /dev/random
   use String::Urandom;
 
   my $obj = String::Urandom->new(
-      LENGTH => 255,
-      CHARS  => [ qw( a b c 1 2 3 ) ]
+      LENGTH => 55,
+      CHARS  => [ qw/ a b c 1 2 3 / ]
     );
 
   print $obj->rand_string, "\n";
@@ -181,8 +179,8 @@ Create a new session object.  Configuration items may be passed as a parameter.
     or
 
   my %params = (
-      LENGTH => 255,
-      CHARS  => [ qw( a b c 1 2 3 ) ]
+      LENGTH => 55,
+      CHARS  => [ qw/ a b c 1 2 3 / ]
     );
 
   my $obj = String::Urandom->new(\%params);
@@ -193,7 +191,7 @@ This method will Set/Get the string character length.
 
 The default value is: 32
 
-  $obj->str_length(255);
+  $obj->str_length(55);
 
 =head2 str_chars
 
@@ -201,7 +199,7 @@ This method will Set/Get characters used for generating a string.
 
 The default value is: a-z A-Z 0-9
 
-  $obj->str_chars('a e i o u 1 2 3');
+  $obj->str_chars('a b c 1 2 3');
 
 =head2 rand_string
 
@@ -226,6 +224,11 @@ The default value is: a-z A-Z 0-9
 =head1 REQUIREMENTS
 
 Any flavour of UNIX that supports /dev/urandom
+
+=head1 SECURITY
+
+In general, the longer the string length and total characters defined, the more
+secure the output result will be.
 
 =head1 NOTES
 
