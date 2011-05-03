@@ -24,16 +24,16 @@ INSTALLATION
       $ tar xfz String-Urandom-0.X.X.tar.gz
       $ perl MakeFile.PL PREFIX=~/path/to/custom/dir LIB=~/path/to/custom/lib
       $ make
-      $ make test     <-- Make sure you do this before contacting me
+      $ make test
       $ make install
 
     Perl one liner using CPAN.pm:
 
-      perl -MCPAN -e 'install String::Urandom'
+      $ perl -MCPAN -e 'install String::Urandom'
 
     Use of CPAN.pm in interactive mode:
 
-      $> perl -MCPAN -e shell
+      $ perl -MCPAN -e shell
       cpan> install String::Urandom
       cpan> quit
 
@@ -108,7 +108,7 @@ COPYRIGHT
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
 
-    See <http://www.perl.com/perl/misc/Artistic.html>
+    See <http://dev.perl.org/licenses/artistic.html>
 
 DISCLAIMER OF WARRANTY
     BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY

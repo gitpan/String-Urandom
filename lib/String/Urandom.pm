@@ -19,7 +19,7 @@ use strict;
 use warnings;
 use Params::Validate qw( :all );
 
-our $VERSION = 0.13;
+our $VERSION = 0.14;
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~[  OBJECT METHODS  ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
@@ -88,15 +88,36 @@ sub rand_string {
           { type => OBJECT }
           );
 
+    my @chars = shuffle_array( \@{ $self->{CHARS} } );
+
     open (DEV, "/dev/urandom") or die "Cannot open file: $!";
     read (DEV, my $bytes, $self->{LENGTH});
 
     my $string;
     my @randoms = split(//, $bytes);
     foreach (@randoms) {
-        $string .= @{ $self->{CHARS} }[ ord($_) % @{ $self->{CHARS} } ];
+        $string .= @chars[ ord($_) % @chars ];
     }
     return $string;
+}
+
+#----------------------------------------------------------------------------+ 
+# shuffle_array()
+#
+# Fisher-Yates shuffle algorithm - Perl Cookbook, Recipe 4.17
+
+sub shuffle_array {
+    my $array = shift;
+
+    for (my $i = @{$array}; --$i;) {
+        my $j = int rand ($i + 1);
+
+        next if ($i == $j);
+
+        @{$array}[$i, $j] = @{$array}[$j, $i];
+    }
+
+    return @$array;
 }
 
 1;
@@ -133,16 +154,16 @@ From source:
   $ tar xfz String-Urandom-0.X.X.tar.gz
   $ perl MakeFile.PL PREFIX=~/path/to/custom/dir LIB=~/path/to/custom/lib
   $ make
-  $ make test     <-- Make sure you do this before contacting me
+  $ make test
   $ make install
 
 Perl one liner using CPAN.pm:
 
-  perl -MCPAN -e 'install String::Urandom'
+  $ perl -MCPAN -e 'install String::Urandom'
 
 Use of CPAN.pm in interactive mode:
 
-  $> perl -MCPAN -e shell
+  $ perl -MCPAN -e shell
   cpan> install String::Urandom
   cpan> quit
 

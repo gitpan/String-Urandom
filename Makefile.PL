@@ -11,4 +11,4 @@ WriteMakefile(
         'Test::More'       => 0.88,
         'Params::Validate' => 0,
     },
-);
+  );
